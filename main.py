@@ -212,11 +212,11 @@ def read_map(grid, filename):
     with open(filename, "rt") as map_file:
         csv_file = csv.reader(map_file)
         for y, row in enumerate(csv_file):
-            for x, el in enumerate(row):
+            for x, cell in enumerate(row):
                 # If the spreadsheet element is 1 and not a space,
                 # the cell should be alive.
-                if el and el != " ":
-                    grid[y][x] = int(el)
+                if cell and cell != " ":
+                    grid[y][x] = int(cell)
 
 
 def main():
@@ -246,8 +246,8 @@ def main():
         # Wipe the screen
         screen.fill((250, 250, 0))
         for y, row in enumerate(grid):
-            for x, el in enumerate(row):
-                if el:
+            for x, cell in enumerate(row):
+                if cell:
                     color = (255, 0, 0)
                 else:
                     color = (0, 255, 0)
