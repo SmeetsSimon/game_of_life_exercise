@@ -9,7 +9,7 @@
   ```bash
   python3 main.py
   ```
-- Er staan nog voorbeelden in de "maps" directory. Deze kan je proberen met:
+- Er staan nog voorbeelden in de "maps" directory. Deze kan je proberen met bijvoorbeeld:
   ```bash
   python3 main.py maps/maps_ss_glider.csv
   ```
