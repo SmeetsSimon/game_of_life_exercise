@@ -23,11 +23,10 @@ CELL_HEIGHT = 25
 
 
 def create_row_zeros(length):
-    """Create a list of zeros of the given length
-
-    length: the number of zeros in the list
-    """
-    return None
+    result= []
+    for i in range(length):
+        result.append(0)
+    return result
 
 
 def create_empty_grid(width, height):
@@ -38,7 +37,10 @@ def create_empty_grid(width, height):
     width: the width of the grid in cells
     height: the height of the grid in cells
     """
-    return None
+    result = []
+    for i in range(height):
+        result.append(create_row_zeros(width))
+    return result
 
 
 def get_left(grid, x, y):
@@ -50,6 +52,7 @@ def get_left(grid, x, y):
 
     If the cell is on the left border, return 0.
     """
+
     return None
 
 
