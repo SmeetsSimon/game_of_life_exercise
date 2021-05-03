@@ -100,6 +100,10 @@ def get_bottom(grid, height, x, y):
 
     If the cell is on the bottom row, return 0.
     """
+    if y == height - 1:
+        return 0
+    result = grid[y+1][x]
+    return result
 
 
 
@@ -113,7 +117,12 @@ def get_topleft(grid, x, y):
     If the cell is on the top row, return 0.
     If the cell is on the left column, return 0.
     """
-    return None
+    if x == 0:
+        return 0
+    if y == 0:
+        return 0
+    result = grid[y-1][x-1]
+    return result
 
 
 def get_topright(grid, width, x, y):
@@ -127,7 +136,12 @@ def get_topright(grid, width, x, y):
     If the cell is on the top row, return 0.
     If the cell is on the last column , return 0.
     """
-    return None
+    if x == width -1:
+        return 0
+    if y == 0:
+        return  0
+    result = grid[y-1][x+1]
+    return result
 
 
 def get_bottomleft(grid, height, x, y):
@@ -141,7 +155,12 @@ def get_bottomleft(grid, height, x, y):
     If the cell is on the last row, return 0.
     If the cell is on the first column , return 0.
     """
-    return None
+    if x == 0:
+        return 0
+    if y == height - 1:
+        return 0
+    result = grid[y+1][x-1]
+    return result
 
 
 def get_bottomright(grid, width, height, x, y):
@@ -156,7 +175,12 @@ def get_bottomright(grid, width, height, x, y):
     If the cell is on the last row, return 0.
     If the cell is on the last column , return 0.
     """
-    return None
+    if x == width - 1:
+        return 0
+    if y == height - 1:
+        return 0
+    result = grid[y+1][x+1]
+    return result
 
 
 def get_neighbours(grid, width, height, x, y):
@@ -168,7 +192,20 @@ def get_neighbours(grid, width, height, x, y):
     x: the x-position of the cell
     y: the y-position of the cell
     """
-    return None
+
+    result = []
+
+    result.append(get_topleft(grid, x, y))
+    result.append(get_top(grid, x, y))
+    result.append(get_topright(grid, width, x, y))
+    result.append(get_right(grid, width, x, y))
+    result.append(get_bottomright(grid, width, height, x, y))
+    result.append(get_bottom(grid, height, x, y))
+    result.append(get_bottomleft(grid, height, x, y))
+    result.append(get_left(grid, x, y))
+    return result
+
+
 
 
 def count_neighbours(grid, width, height, x, y):
@@ -182,7 +219,10 @@ def count_neighbours(grid, width, height, x, y):
     x: the x-position of the cell
     y: the y-position of the cell
     """
-    return None
+    result = []
+    result.count(get_neighbours())
+
+    return result
 
 
 def live_or_die(grid, width, height, x, y):
