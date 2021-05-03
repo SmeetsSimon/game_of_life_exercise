@@ -52,8 +52,11 @@ def get_left(grid, x, y):
 
     If the cell is on the left border, return 0.
     """
+    if x == 0:
+        return 0
+    result = grid[y][x - 1]
+    return result
 
-    return None
 
 
 def get_right(grid, width, x, y):
@@ -66,7 +69,10 @@ def get_right(grid, width, x, y):
 
     If the cell is on the right border, return 0.
     """
-    return None
+    if x == width - 1:
+        return 0
+    result = grid[y][x + 1]
+    return result
 
 
 def get_top(grid, x, y):
@@ -78,7 +84,10 @@ def get_top(grid, x, y):
 
     If the cell is on the top row, return 0.
     """
-    return None
+    if y == 0:
+        return 0
+    result = grid[y - 1][x]
+    return result
 
 
 def get_bottom(grid, height, x, y):
@@ -91,7 +100,7 @@ def get_bottom(grid, height, x, y):
 
     If the cell is on the bottom row, return 0.
     """
-    return None
+
 
 
 def get_topleft(grid, x, y):
