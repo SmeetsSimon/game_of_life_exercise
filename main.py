@@ -219,10 +219,13 @@ def count_neighbours(grid, width, height, x, y):
     x: the x-position of the cell
     y: the y-position of the cell
     """
-    result = []
-    result.count(get_neighbours())
+    result = get_neighbours(grid, width, height, x, y)
+    som = 0
+    for i in result:
+         som = som + i
 
-    return result
+    return som
+
 
 
 def live_or_die(grid, width, height, x, y):
@@ -241,7 +244,14 @@ def live_or_die(grid, width, height, x, y):
     x: the x-position of the cell
     y: the y-position of the cell
     """
-    return None
+    result = get_neighbours(grid, width, height, x, y)
+    if grid[y][x] == 0
+        return false
+    if grid[y][x] == 1
+        return true
+
+
+    return result
 
 
 def update_grid(grid, width, height):
